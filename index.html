@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id = "mydiv">
+        <h1 v-text="title"></h1>
+        <p>Here is a message: {{message}}</p>
+
+        <button v-on:click="testMethod()" v-bind:disabled="!enableButton" > {{buttonText}}</button>
+        
+        <p>{{num1}}  + {{num2}} = {{testSum}}</p>
+    </div>
+
+    <script type="module">
+        const {createApp} = Vue
+        const myApp = createApp({
+            data(){
+                return{
+                    message: "Hello World!",
+                    title: "My Page",
+                    buttonText: "Click Me!",
+                    num1: 10,
+                    num2: 6,
+                    enableButton:false
+                }
+            },
+            methods:{
+                testMethod(){
+                    this.buttonText = "I've been Clicked!"
+                }
+            },
+            computed:{
+                testSum:function(){
+                    return this.num1 + this.num2
+                }
+            }
+        })
+        myApp.mount("#mydiv")
+    </script>
+</body>
+</html>
