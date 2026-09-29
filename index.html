@@ -13,7 +13,7 @@
         <p>Here is a message: {{message}}</p>
 
         <button v-on:click="testMethod()" v-bind:disabled="!enableButton" > {{buttonText}}</button>
-        
+
         <p>{{num1}}  + {{num2}} = {{testSum}}</p>
     </div>
 
@@ -32,7 +32,7 @@
             },
             methods:{
                 testMethod(){
-                    this.buttonText = "I've been Clicked!"
+                    this.buttonText = "I've been Clicked!!!"
                 }
             },
             computed:{
